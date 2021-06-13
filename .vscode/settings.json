@@ -1,0 +1,9 @@
+{
+  "editor.formatOnType": true,
+  "editor.codeLens": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.tabCompletion": "on",
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "editor.fontFamily": "Menlo"
+}
