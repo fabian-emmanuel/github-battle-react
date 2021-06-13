@@ -1,17 +1,48 @@
-import React from 'react'
+import React from "react";
 
-export default class Popular extends React.Component{
+function LanguagesNav({ selected, onUpdateLanguage }) {
+  const languages = ["All", "Java", "JavaScript", "Python", "Css", "Ruby "];
+  return (
+    <ul className="flex-center">
+      {languages.map((language) => (
+        <li key={language}>
+          <button
+            className="btn-clear nav-link"
+            style={
+              language === selected ? { color: "red" } : null
+            }
+            onClick={() => onUpdateLanguage(language)}
+          >
+            {language}
+          </button>
+        </li>
+      ))}
+    </ul>
+  );
+  
+}
+
+export default class Popular extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedLanguage: "All",
+    };
+    this.updateLanguage = this.updateLanguage.bind(this)
+  }
+
+  updateLanguage(selectedLanguage) {
+    this.setState({ selectedLanguage });
+  }
+
   render() {
-    const languages = ['All', 'Java', 'JavaScript', 'Python', 'Css', 'Ruby ']
+    const { selectedLanguage } = this.state
+    
     return (
-      <ul className='flex-center'>
-        {languages.map((language) => 
-          <li key={language}>
-            <button className='btn-clear nav-link'>
-              {language}
-            </button>
-          </li>)}
-      </ul>
+      <React.Fragment>
+        <LanguagesNav selected={selectedLanguage}
+          onUpdateLanguage={this.updateLanguage}/>
+      </React.Fragment>
     )
   }
 }
