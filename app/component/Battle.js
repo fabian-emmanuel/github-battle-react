@@ -87,9 +87,9 @@ function PlayerPreview({ username, onReset, label }) {
       <div className="row bg-light">
         <div className="player-info">
           <img
-            className="avater-small"
+            className="avatar-small"
             src={`https://github.com/${username}.png?size=60`}
-            alt={`Avater for ${username}`}/>
+            alt={`Avatar for ${username}`}/>
           <a className="link"
             href={`https://github.com/${username}`}>
             {username}
